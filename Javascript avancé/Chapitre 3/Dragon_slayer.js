@@ -133,5 +133,5 @@ class Dragon extends Player {
 
 // On lance le début de la partie en faisant appel à la méthode run() de la class Game 
 const game = new Game();
-console.log(game.run());
+game.run();
 
