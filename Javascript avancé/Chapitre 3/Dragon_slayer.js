@@ -5,10 +5,11 @@ class Game {
     player1;
     player2;
 
-    constructor(player1, player2) {   
+    constructor(player1, player2, game) {   
         // Instanciation des deux objets de Player (Knight, Dragon)
         this.player1 = new Knight(100, 70, 0, "Lair");
         this.player2 = new Dragon(75, 85, 0, "Dragon");
+        this._game = 1;
     }
 
     // Méthode
@@ -25,13 +26,16 @@ class Game {
             /* 3 - La boucle prend fin quand un desjoueurs arrive à 0 ou moins */
 
             let random = Math.random();
-            //console.log(random);
+            // console.log(random);
 
-            if (random >= 0 && random <= 0.49) {
+            console.log(`Tour n°: ${this._game++}`); 
+            
+
+            if (random > 0 && random < 0.5) {
 
                 console.log(this.player2.hit(this.player1));
 
-            } else if (random >= 0.50 && random <= 1) {
+            } else {
 
                 console.log(this.player1.hit(this.player2));
 
@@ -105,7 +109,7 @@ class Player {
     // Méthodes
     hit(target) {
         // Méthode qui sert à attaquer et qui prend en paramètre la cible à attaquer 
-        let degats = this._force / 2;
+        let degats = this._force * 0.2;
         target.life -= degats;
 
         // On met à jour le nombre de coups
