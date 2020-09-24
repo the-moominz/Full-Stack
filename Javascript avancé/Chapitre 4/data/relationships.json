@@ -1,0 +1,30 @@
+{ "relationship" : [
+    {
+        "id": 1,
+        "relation" : [2, 5]
+    },
+    {
+        "id": 2,
+        "relation" : [2, 5, 8]
+    },
+    {
+        "id": 1,
+        "relation" : [2, 5]
+    },
+    {
+        "id": 1,
+        "relation" : [2, 5]
+    },
+    {
+        "id": 1,
+        "relation" : [2, 5]
+    },
+    {
+        "id": 1,
+        "relation" : [2, 5]
+    },
+    {
+        "id": 1,
+        "relation" : [2, 5]
+    }
+]}
