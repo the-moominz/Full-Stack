@@ -25,16 +25,16 @@ class Game {
             /* 3 - La boucle prend fin quand un desjoueurs arrive à 0 ou moins */
 
             let random = Math.random();
-            console.log(random);
+            //console.log(random);
 
             if (random >= 0 && random <= 0.49) {
 
-                this.player2.hit(this.player1);
-                console.log(`Le dragon prend la main et attaque le chevalier.`);
+                console.log(this.player2.hit(this.player1));
+
             } else if (random >= 0.50 && random <= 1) {
 
-                this.player1.hit(this.player2);
-                console.log(`Le chevalier prend la main et attaque le dragon.`);
+                console.log(this.player1.hit(this.player2));
+
             }
 
         } 
@@ -43,13 +43,11 @@ class Game {
         Si l'un des joueurs a encore des PV, il gagne. On affiche ses PV restants et le nombre de coups. */
         if (this.player1.life > 0) {
 
-            console.log(`${this.player1.name} a gagné. Il lui reste ${this.player1.life} de points de vie. Il a infligé
-            ${this.player1.shot} coups. 
-            ${this.player2.name} perd et n'a infligé que ${this.player2.shot} coup(s).`);
+            console.log(`${this.player1.name} a gagné. Il lui reste ${this.player1.life} de points de vie. Il a infligé ${this.player1.shot} coup(s). ${this.player2.name} perd et n'a infligé que ${this.player2.shot} coup(s).`);
+
         } else {
-            console.log(`${this.player2.name} a gagné. Il lui reste ${this.player2.life} de points de vie. Il a infligé
-            ${this.player2.shot} coups.
-             ${this.player1.name} perd et n'a infligé que ${this.player1.shot} coup(s).`);
+
+            console.log(`${this.player2.name} a gagné. Il lui reste ${this.player2.life} de points de vie. Il a infligé ${this.player2.shot} coup(s). ${this.player1.name} perd et n'a infligé que ${this.player1.shot} coup(s).`);
         }
 
     }
