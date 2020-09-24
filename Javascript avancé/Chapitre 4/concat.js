@@ -2,10 +2,8 @@
 Appellez deux fois cette fonction pour concatener le message suivant : "Hello" + "World!". */
 
 const phrase = (string, callback) => {
-    setTimeout(() => {
         // Fonction de callback
         callback(string);
-    }, 1000);
 }
 
 // Premier appel de la fonction phrase 
