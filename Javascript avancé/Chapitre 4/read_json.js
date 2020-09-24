@@ -13,7 +13,6 @@ const fs = require('fs');
 
 // 1- Changez le code ci-dessus et utilisez une promesse pour gérez la récupération des données
 const file = filename => ( new Promise((resolve, reject) => {
-    setTimeout(() => {
         fs.readFile(filename, { encoding: 'utf8' }, (err, data) => {
             // impossible de lire le fichier
             if (err) {
@@ -23,7 +22,6 @@ const file = filename => ( new Promise((resolve, reject) => {
             }
             resolve(JSON.parse(data));
         })
-    } ,300);
     })
 );
 
