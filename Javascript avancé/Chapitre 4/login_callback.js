@@ -5,9 +5,8 @@ const login = (email, password, callback ) => {
     }, 1000);
 }
 
-login( 'alan@alan.fr', 123456789, email => { 
-    console.log(email) 
-});
+
+    login( 'alan@alan.fr', 123456789, email => { console.log(email) })
 
 
 
