@@ -7,8 +7,8 @@ class Game {
 
     constructor(player1, player2, game) {   
         // Instanciation des deux objets de Player (Knight, Dragon)
-        this.player1 = new Knight(100, 70, 0, "Lair");
-        this.player2 = new Dragon(75, 85, 0, "Dragon");
+        this.player1 = new Knight(100, 70, "Lair");
+        this.player2 = new Dragon(75, 85, "Dragon");
         this._game = 1;
     }
 
@@ -25,13 +25,11 @@ class Game {
 
             /* 3 - La boucle prend fin quand un desjoueurs arrive à 0 ou moins */
 
-            let random = Math.random();
-            // console.log(random);
 
             console.log(`Tour n°: ${this._game++}`); 
             
 
-            if (random > 0 && random < 0.5) {
+            if (Math.random() < .5) {
 
                 console.log(this.player2.hit(this.player1));
 
@@ -61,11 +59,11 @@ class Game {
 // Création d'une class Player, dont héritera tous les futurs joueurs 
 class Player {
 
-    constructor(force, life, shot, name) {
+    constructor(force, life, name) {
 
         this._force = force;
         this._life = life;
-        this._shot = shot;
+        this._shot = 0;
         this._name = name;
     }
 
@@ -115,7 +113,7 @@ class Player {
         // On met à jour le nombre de coups
         this._shot++;
 
-        return `${this._name} a infligé ${degats} de dégâts à ${target.name}`; 
+        return `${this._name} a infligé ${degats} de dégâts à ${target.name}.`; 
     }
  
 }
