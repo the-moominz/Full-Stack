@@ -26,11 +26,21 @@ const file = filename => ( new Promise((resolve, reject) => {
 );
 
 file('./data/dragons.json')
-.then(fs => console.log(fs))
+.then( data => {
+    //console.log(data);
+    const { dragons } = data;
+
+    // Liste des dragons par ordre de leur âge DESC
+    dragons.sort((a, b) => b.age - a.age);
+    console.log(dragons);
+
+    const youngest = dragons[dragons.length - 1];
+    const oldest = dragons[0];
+
+    // Affichage des noms & âges du plus vieux et du plus jeune des dragons
+    return `The oldest is ${oldest.age} y.o and his name is ${oldest.name}. The youngest is ${youngest.age} y.o and his name is ${youngest.name}.`;
+    
+})
+.then(data => console.log(data))
 .catch(err => console.error(err));
 
-// 2- Quel est le dragon le plus agé ? Faite un script pour répondre à cette question.
-
-// 3- Quel est le dragon le plus jeune ? Faite un script pour répondre à cette question.
-
-// 4- Récupérez les dragons et ordonnées les par age décroissant.
