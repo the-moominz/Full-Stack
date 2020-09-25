@@ -1,11 +1,11 @@
-{ "relationship" : [
+{ "relationships" : [
     {
         "id": 1,
         "relation" : [2, 5]
     },
     {
         "id": 2,
-        "relation" : [2, 5, 8]
+        "relation" : [1, 5, 8]
     },
     {
         "id": 3,
@@ -25,6 +25,6 @@
     },
     {
         "id": 7,
-        "relation" : [1, 2, 7, 8]
+        "relation" : [1, 2, 3, 8]
     }
 ]}
